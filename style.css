@@ -1,1 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+body {
+  background-color: #0f172a;
+  color: #f8fafc;
+  line-height: 1.6;
+}
+
+.secao {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.hero {
+  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+}
+
+.sobre {
+  background-color: #1e293b;
+}
+
+.projetos {
+  background-color: #0f172a;
+}
+
+.grid-projetos {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  max-width: 900px;
+}
+
+.card {
+  background-color: #334155;
+  padding: 24px;
+  border-radius: 8px;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.contato {
+  background-color: #1e293b;
+}
+
+h1 { font-size: 2.8rem; margin-bottom: 16px; }
+h2 { font-size: 2.2rem; margin-bottom: 16px; }
+p { font-size: 1.1rem; color: #cbd5e1; }
