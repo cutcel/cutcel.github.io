@@ -5,9 +5,11 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* 1. FUNDO GERAL DO SITE */
+/* Mudámos de azul escuro para branco, com texto escuro para leitura fácil */
 body {
-  background-color: #0f172a;
-  color: #f8fafc;
+  background-color: #ffffff; 
+  color: #111111; 
   line-height: 1.6;
 }
 
@@ -21,16 +23,27 @@ body {
   text-align: center;
 }
 
+/* 2. SEÇÃO INICIAL (HERO) */
+/* Um degradê muito suave de branco para um cinza super claro */
 .hero {
-  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f3f4f6 100%);
 }
 
+/* 3. SEÇÃO SOBRE MIM */
+/* Usamos um Laranja Vibrante inspirado na sua logo para criar impacto */
 .sobre {
-  background-color: #1e293b;
+  background-color: #F27521; /* Cor Laranja Cutcel */
+  color: #ffffff; /* Texto em branco para contrastar com o laranja */
+}
+/* Força os parágrafos desta secção a ficarem brancos */
+.sobre p { 
+  color: #ffffff; 
 }
 
+/* 4. SEÇÃO PROJETOS */
+/* Fundo cinza claro para destacar os cartões dos vídeos/projetos */
 .projetos {
-  background-color: #0f172a;
+  background-color: #f3f4f6;
 }
 
 .grid-projetos {
@@ -42,18 +55,28 @@ body {
   max-width: 900px;
 }
 
+/* 5. CARTÕES DE PROJETOS */
+/* Cartões brancos com uma linha laranja na base para manter a identidade */
 .card {
-  background-color: #334155;
+  background-color: #ffffff;
   padding: 24px;
   border-radius: 8px;
   width: 280px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* Sombra moderna e suave */
+  border-bottom: 5px solid #F27521; /* Detalhe laranja da Cutcel */
+  color: #111111;
 }
 
+/* 6. SEÇÃO CONTATO */
+/* Fundo preto absoluto (como o texto da sua logo) para um fecho profissional */
 .contato {
-  background-color: #1e293b;
+  background-color: #000000;
+  color: #ffffff;
+}
+.contato p {
+  color: #9ca3af; /* Cinza claro para os dados de contacto */
 }
 
 h1 { font-size: 2.8rem; margin-bottom: 16px; }
 h2 { font-size: 2.2rem; margin-bottom: 16px; }
-p { font-size: 1.1rem; color: #cbd5e1; }
+p { font-size: 1.1rem; color: #4b5563; }
