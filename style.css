@@ -21,6 +21,8 @@ body {
   align-items: center;
   padding: 40px 20px;
   text-align: center;
+  position: relative; /* Mantém o aviso preso no fundo desta seção específica */
+}
 }
 
 /* 2. SEÇÃO INICIAL (HERO) */
@@ -80,3 +82,41 @@ body {
 h1 { font-size: 2.8rem; margin-bottom: 16px; }
 h2 { font-size: 2.2rem; margin-bottom: 16px; }
 p { font-size: 1.1rem; color: #4b5563; }
+/* --- ESTILOS DO INDICADOR DE SCROLL (ARRASTE PARA CIMA) --- */
+
+.indicador-scroll {
+  position: absolute; /* Tira o elemento do fluxo normal e o obedece ao 'bottom' */
+  bottom: 30px; /* Fica a 30 pixels de distância do limite inferior da aba */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.7; /* Deixa levemente transparente para ser elegante */
+  animation: flutuar 2s infinite ease-in-out; /* Ativa a animação de sobe e desce repetidamente */
+}
+
+.indicador-scroll span {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+/* Criamos a setinha desenhando as bordas de um quadrado vazio e girando-o em 45 graus */
+.seta-baixo {
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+
+/* O "motor" da animação que faz o elemento subir e descer 10 pixels */
+@keyframes flutuar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
