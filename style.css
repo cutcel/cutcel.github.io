@@ -119,4 +119,105 @@ p { font-size: 1.1rem; color: #4b5563; }
     transform: translateY(10px);
   }
 }
+/* --- LAYOUT PORTFÓLIO AUDIOVISUAL --- */
 
+.portfolio-audiovisual {
+  background-color: #0a0a0a; /* Fundo bem escuro como na referência */
+  color: #ffffff;
+  align-items: flex-start; /* Alinha o conteúdo à esquerda */
+  text-align: left;
+  padding: 80px 5%; /* Dá respiro nas laterais */
+  min-height: auto; /* Permite que a seção cresça conforme o tamanho dos vídeos */
+  padding-bottom: 120px;
+}
+
+/* Cabeçalho da seção */
+.portfolio-header {
+  margin-bottom: 40px;
+  max-width: 800px;
+}
+
+.overline {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #888888;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.portfolio-header h2 {
+  font-size: 2.8rem;
+  line-height: 1.1;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.portfolio-header p {
+  color: #a3a3a3;
+  font-size: 1.1rem;
+}
+
+/* Grelha de Vídeos */
+.grid-videos-verticais {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* Permite que os vídeos caiam para a linha de baixo no celular */
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* Cartões de Vídeo Vertical */
+.card-video {
+  background-color: #141414;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 280px; /* Largura fixa ideal para vídeos verticais */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  border-bottom: 4px solid #F27521; /* Linha laranja da Cutcel */
+  transition: transform 0.3s ease;
+}
+
+.card-video:hover {
+  transform: translateY(-5px); /* Efeito de flutuar ao passar o mouse */
+}
+
+/* Força o YouTube a ficar no formato Vertical (9:16) */
+.iframe-container {
+  width: 100%;
+  aspect-ratio: 9 / 16; 
+  background-color: #000;
+}
+
+.iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Área de texto debaixo do vídeo */
+.video-info {
+  padding: 20px;
+}
+
+.categoria {
+  background-color: #333333;
+  color: #dddddd;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.video-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.video-info p {
+  font-size: 0.9rem;
+  color: #999999;
+  line-height: 1.4;
+}
