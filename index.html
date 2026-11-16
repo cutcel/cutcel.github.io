@@ -9,13 +9,20 @@
 </head>
 <body>
   <!-- Seção 1: Apresentação (Hero com Vídeo de Fundo) -->
+ <!-- Seção 1: Apresentação (Hero com Efeito Vidro/Blur) -->
   <section class="secao hero">
-    <!-- Vídeo rodando no fundo -->
-    <video autoplay loop muted playsinline class="video-fundo">
+    
+    <!-- 1. Camada de Fundo: Esticada e Desfocada -->
+    <video autoplay loop muted playsinline class="video-fundo-blur">
       <source src="reel.mp4" type="video/mp4">
     </video>
     
-    <!-- Camada escura para dar leitura ao texto -->
+    <!-- 2. Camada Frontal: Nítida e Centralizada -->
+    <video autoplay loop muted playsinline class="video-fundo-claro">
+      <source src="reel.mp4" type="video/mp4">
+    </video>
+    
+    <!-- 3. Película estilo vidro (Glassmorphism) -->
     <div class="overlay-escuro"></div>
 
     <!-- Conteúdo em texto -->
