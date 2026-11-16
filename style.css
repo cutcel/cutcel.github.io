@@ -28,17 +28,18 @@ body {
 /* 2. SEÇÃO INICIAL (HERO) */
 /* Um degradê muito suave de branco para um cinza super claro */
 /* --- CONFIGURAÇÃO DA SEÇÃO HERO COM VÍDEO --- */
-.hero {
-  position: relative;
-  overflow: hidden; /* Evita que o vídeo vaze pelas bordas */
-  background-color: #000000; /* Cor de segurança caso a internet do cliente seja lenta */
-}
+/* --- CONFIGURAÇÃO DA SEÇÃO HERO COM AMBIENT MODE (CORRIGIDA) --- */
 
-/* --- CONFIGURAÇÃO DA SEÇÃO HERO COM AMBIENT MODE --- */
 .hero {
   position: relative;
+  width: 100%;
+  height: 100vh; /* Força a seção a ter exatamente a altura da tela do PC ou telemóvel */
   overflow: hidden;
   background-color: #050505;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* 1. O vídeo que preenche as laterais com desfoque intenso */
@@ -46,11 +47,11 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100%;
-  height: 100%;
-  transform: translate(-50%, -50%) scale(1.1); /* O scale 1.1 esconde as bordas duras do blur */
-  object-fit: cover; /* Força o vídeo a preencher toda a tela */
-  filter: blur(35px) opacity(0.6); /* Borrão bem forte e um pouco escurecido */
+  width: 100vw; /* Força a ocupar a largura total do monitor */
+  height: 100vh; /* Força a ocupar a altura total do monitor */
+  transform: translate(-50%, -50%) scale(1.2); /* O scale 1.2 impede que as bordas originais do vídeo apareçam */
+  object-fit: cover; 
+  filter: blur(40px) opacity(0.5); /* Borrão espalhado nas laterais */
   z-index: 1;
 }
 
@@ -62,33 +63,26 @@ body {
   width: 100%;
   height: 100%;
   transform: translate(-50%, -50%);
-  object-fit: contain; /* Mostra o vídeo vertical inteiro sem cortar nada */
+  object-fit: contain; /* Garante que o vídeo vertical inteiro caiba no ecrã do PC sem cortes */
   z-index: 2;
 }
 
-/* 3. Película estilo "vidro fumê" por cima de tudo para garantir a leitura do texto */
+/* 3. Película estilo "vidro fumê" */
 .overlay-escuro {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* Preto com 40% de transparência */
-  backdrop-filter: blur(4px); /* O efeito "vidro" sobre o vídeo central */
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
   z-index: 3;
 }
 
-/* 4. Organização das camadas de Texto e Seta (Ajuste o z-index para 4) */
+/* 4. Organização das camadas de Texto */
 .hero-conteudo {
   position: relative;
-  z-index: 4; /* Fica acima da película e dos vídeos */
-  color: #ffffff;
-  text-align: center;
-}
-
-.hero-conteudo {
-  position: relative;
-  z-index: 3; /* Fica acima do vídeo e da película escurecida */
+  z-index: 4;
   color: #ffffff;
   text-align: center;
 }
