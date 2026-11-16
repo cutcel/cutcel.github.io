@@ -168,15 +168,38 @@ body {
   font-size: 1.1rem;
 }
 
+/* Grelha de Vídeos em formato Carrossel Horizontal */
 .grid-videos-verticais {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap; 
+  flex-wrap: nowrap; /* Mantém todos os vídeos na mesma linha horizontal */
   justify-content: flex-start;
   width: 100%;
+  overflow-x: auto; /* Ativa a rolagem horizontal */
+  padding-bottom: 24px; /* Espaço para a barra de rolagem */
+  scroll-behavior: smooth; /* Rolagem suave */
+  
+  /* Esconde a barra feia no Firefox */
+  scrollbar-width: thin; 
+  scrollbar-color: #F27521 #141414; 
 }
 
+/* Estilização da barra de rolagem para navegadores Chrome/Safari/Edge */
+.grid-videos-verticais::-webkit-scrollbar {
+  height: 8px; /* Espessura da barra horizontal */
+}
+.grid-videos-verticais::-webkit-scrollbar-track {
+  background: #141414;
+  border-radius: 10px;
+}
+.grid-videos-verticais::-webkit-scrollbar-thumb {
+  background-color: #F27521; /* Laranja CutCel */
+  border-radius: 10px;
+}
+
+/* Cartões de Vídeo Vertical */
 .card-video {
+  flex: 0 0 auto; /* Impede que o cartão encolha quando há muitos vídeos na tela */
   background-color: #141414;
   border-radius: 12px;
   overflow: hidden;
@@ -185,6 +208,11 @@ body {
   border-bottom: 4px solid #F27521; 
   transition: transform 0.3s ease;
 }
+
+.card-video:hover {
+  transform: translateY(-5px); 
+}
+
 
 .card-video:hover {
   transform: translateY(-5px); 
