@@ -34,32 +34,56 @@ body {
   background-color: #000000; /* Cor de segurança caso a internet do cliente seja lenta */
 }
 
-.video-fundo {
+/* --- CONFIGURAÇÃO DA SEÇÃO HERO COM AMBIENT MODE --- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background-color: #050505;
+}
+
+/* 1. O vídeo que preenche as laterais com desfoque intenso */
+.video-fundo-blur {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%) scale(1.1); /* O scale 1.1 esconde as bordas duras do blur */
+  object-fit: cover; /* Força o vídeo a preencher toda a tela */
+  filter: blur(35px) opacity(0.6); /* Borrão bem forte e um pouco escurecido */
+  z-index: 1;
+}
+
+/* 2. O vídeo principal, perfeitamente nítido no centro */
+.video-fundo-claro {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 100%;
   height: 100%;
   transform: translate(-50%, -50%);
-  object-fit: cover; /* No celular, o vídeo vertical preenche a tela toda perfeitamente */
-  z-index: 1;
+  object-fit: contain; /* Mostra o vídeo vertical inteiro sem cortar nada */
+  z-index: 2;
 }
 
-/* Regra específica para telas maiores (Computadores e Tablets deitados) */
-@media (min-width: 769px) {
-  .video-fundo {
-    object-fit: contain; /* Encaixa o vídeo inteiro no centro da tela sem cortar nenhuma parte */
-  }
-}
-
+/* 3. Película estilo "vidro fumê" por cima de tudo para garantir a leitura do texto */
 .overlay-escuro {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.65); /* Película preta com 65% de transparência */
-  z-index: 2; /* Fica acima do vídeo */
+  background-color: rgba(0, 0, 0, 0.4); /* Preto com 40% de transparência */
+  backdrop-filter: blur(4px); /* O efeito "vidro" sobre o vídeo central */
+  z-index: 3;
+}
+
+/* 4. Organização das camadas de Texto e Seta (Ajuste o z-index para 4) */
+.hero-conteudo {
+  position: relative;
+  z-index: 4; /* Fica acima da película e dos vídeos */
+  color: #ffffff;
+  text-align: center;
 }
 
 .hero-conteudo {
@@ -132,7 +156,7 @@ p { font-size: 1.1rem; color: #4b5563; }
   animation: flutuar 2s infinite ease-in-out;
   
   /* Adicione estas duas linhas abaixo: */
-  z-index: 3; 
+  z-index: 4; 
   color: #ffffff; 
 }
 
