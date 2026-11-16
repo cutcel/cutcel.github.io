@@ -27,25 +27,63 @@ body {
 
 /* 2. SEÇÃO INICIAL (HERO) */
 /* Um degradê muito suave de branco para um cinza super claro */
+/* --- CONFIGURAÇÃO DA SEÇÃO HERO COM VÍDEO --- */
 .hero {
-  background: linear-gradient(180deg, #ffffff 0%, #f3f4f6 100%);
+  position: relative;
+  overflow: hidden; /* Evita que o vídeo vaze pelas bordas */
+  background-color: #000000; /* Cor de segurança caso a internet do cliente seja lenta */
 }
 
-/* 3. SEÇÃO SOBRE MIM */
-/* Usamos um Laranja Vibrante inspirado na sua logo para criar impacto */
-.sobre {
-  background-color: #F27521; /* Cor Laranja Cutcel */
-  color: #ffffff; /* Texto em branco para contrastar com o laranja */
-}
-/* Força os parágrafos desta secção a ficarem brancos */
-.sobre p { 
-  color: #ffffff; 
+.video-fundo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* No celular, o vídeo vertical preenche a tela toda perfeitamente */
+  z-index: 1;
 }
 
-/* 4. SEÇÃO PROJETOS */
-/* Fundo cinza claro para destacar os cartões dos vídeos/projetos */
-.projetos {
-  background-color: #f3f4f6;
+/* Regra específica para telas maiores (Computadores e Tablets deitados) */
+@media (min-width: 769px) {
+  .video-fundo {
+    object-fit: contain; /* Encaixa o vídeo inteiro no centro da tela sem cortar nenhuma parte */
+  }
+}
+
+.overlay-escuro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65); /* Película preta com 65% de transparência */
+  z-index: 2; /* Fica acima do vídeo */
+}
+
+.hero-conteudo {
+  position: relative;
+  z-index: 3; /* Fica acima do vídeo e da película escurecida */
+  color: #ffffff;
+  text-align: center;
+}
+
+.hero-conteudo h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.hero-conteudo p {
+  font-size: 1.2rem;
+  color: #dddddd;
+  letter-spacing: 3px;
+}
+
+.destaque-laranja {
+  color: #F27521; /* Cor da sua marca para dar vida ao título */
 }
 
 .grid-projetos {
@@ -85,13 +123,17 @@ p { font-size: 1.1rem; color: #4b5563; }
 /* --- ESTILOS DO INDICADOR DE SCROLL (ARRASTE PARA CIMA) --- */
 
 .indicador-scroll {
-  position: absolute; /* Tira o elemento do fluxo normal e o obedece ao 'bottom' */
-  bottom: 30px; /* Fica a 30 pixels de distância do limite inferior da aba */
+  position: absolute;
+  bottom: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  opacity: 0.7; /* Deixa levemente transparente para ser elegante */
-  animation: flutuar 2s infinite ease-in-out; /* Ativa a animação de sobe e desce repetidamente */
+  opacity: 0.8;
+  animation: flutuar 2s infinite ease-in-out;
+  
+  /* Adicione estas duas linhas abaixo: */
+  z-index: 3; 
+  color: #ffffff; 
 }
 
 .indicador-scroll span {
