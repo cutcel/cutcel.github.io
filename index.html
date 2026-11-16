@@ -8,11 +8,22 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Seção 1: Apresentação (Hero com Vídeo de Fundo) -->
   <section class="secao hero">
-    <div data-aos="fade-up" data-aos-duration="1000">
-      <h1>BEM-VINDO A CUTCEL</h1>
+    <!-- Vídeo rodando no fundo -->
+    <video autoplay loop muted playsinline class="video-fundo">
+      <source src="reel.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Camada escura para dar leitura ao texto -->
+    <div class="overlay-escuro"></div>
+
+    <!-- Conteúdo em texto -->
+    <div class="hero-conteudo" data-aos="fade-up" data-aos-duration="1000">
+      <h1>BEM-VINDO A <span class="destaque-laranja">CUTCEL</span></h1>
       <p>GRAVAÇÃO / EDIÇÃO / FOTOGRAFIAS</p>
     </div>
+    
     <!-- Indicador de Arraste para cima -->
     <div class="indicador-scroll">
       <span>Arraste para cima</span>
