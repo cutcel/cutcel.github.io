@@ -178,6 +178,7 @@ body {
   overflow-x: auto; /* Ativa a rolagem horizontal */
   padding-bottom: 24px; /* Espaço para a barra de rolagem */
   scroll-behavior: smooth; /* Rolagem suave */
+  -webkit-overflow-scrolling: touch; /* Fluidez no telemóvel */
   
   /* Esconde a barra feia no Firefox */
   scrollbar-width: thin; 
@@ -208,11 +209,6 @@ body {
   border-bottom: 4px solid #F27521; 
   transition: transform 0.3s ease;
 }
-
-.card-video:hover {
-  transform: translateY(-5px); 
-}
-
 
 .card-video:hover {
   transform: translateY(-5px); 
