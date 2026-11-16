@@ -6,7 +6,6 @@
 }
 
 /* 1. FUNDO GERAL DO SITE */
-/* Mudámos de azul escuro para branco, com texto escuro para leitura fácil */
 body {
   background-color: #ffffff; 
   color: #111111; 
@@ -23,17 +22,12 @@ body {
   text-align: center;
   position: relative; /* Mantém o aviso preso no fundo desta seção específica */
 }
-}
 
-/* 2. SEÇÃO INICIAL (HERO) */
-/* Um degradê muito suave de branco para um cinza super claro */
-/* --- CONFIGURAÇÃO DA SEÇÃO HERO COM VÍDEO --- */
-/* --- CONFIGURAÇÃO DA SEÇÃO HERO COM AMBIENT MODE (CORRIGIDA) --- */
-
+/* --- CONFIGURAÇÃO DA SEÇÃO HERO COM AMBIENT MODE --- */
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh; /* Força a seção a ter exatamente a altura da tela do PC ou telemóvel */
+  height: 100vh; /* Força a seção a ter exatamente a altura da tela */
   overflow: hidden;
   background-color: #050505;
   display: flex;
@@ -42,20 +36,18 @@ body {
   align-items: center;
 }
 
-/* 1. O vídeo que preenche as laterais com desfoque intenso */
 .video-fundo-blur {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100vw; /* Força a ocupar a largura total do monitor */
-  height: 100vh; /* Força a ocupar a altura total do monitor */
-  transform: translate(-50%, -50%) scale(1.2); /* O scale 1.2 impede que as bordas originais do vídeo apareçam */
+  width: 100vw; 
+  height: 100vh; 
+  transform: translate(-50%, -50%) scale(1.2); 
   object-fit: cover; 
-  filter: blur(40px) opacity(0.5); /* Borrão espalhado nas laterais */
+  filter: blur(40px) opacity(0.5); 
   z-index: 1;
 }
 
-/* 2. O vídeo principal, perfeitamente nítido no centro */
 .video-fundo-claro {
   position: absolute;
   top: 50%;
@@ -63,11 +55,10 @@ body {
   width: 100%;
   height: 100%;
   transform: translate(-50%, -50%);
-  object-fit: contain; /* Garante que o vídeo vertical inteiro caiba no ecrã do PC sem cortes */
+  object-fit: contain; 
   z-index: 2;
 }
 
-/* 3. Película estilo "vidro fumê" */
 .overlay-escuro {
   position: absolute;
   top: 0;
@@ -79,7 +70,6 @@ body {
   z-index: 3;
 }
 
-/* 4. Organização das camadas de Texto */
 .hero-conteudo {
   position: relative;
   z-index: 4;
@@ -101,45 +91,10 @@ body {
 }
 
 .destaque-laranja {
-  color: #F27521; /* Cor da sua marca para dar vida ao título */
+  color: #F27521; 
 }
 
-.grid-projetos {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 30px;
-  max-width: 900px;
-}
-
-/* 5. CARTÕES DE PROJETOS */
-/* Cartões brancos com uma linha laranja na base para manter a identidade */
-.card {
-  background-color: #ffffff;
-  padding: 24px;
-  border-radius: 8px;
-  width: 280px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* Sombra moderna e suave */
-  border-bottom: 5px solid #F27521; /* Detalhe laranja da Cutcel */
-  color: #111111;
-}
-
-/* 6. SEÇÃO CONTATO */
-/* Fundo preto absoluto (como o texto da sua logo) para um fecho profissional */
-.contato {
-  background-color: #000000;
-  color: #ffffff;
-}
-.contato p {
-  color: #9ca3af; /* Cinza claro para os dados de contacto */
-}
-
-h1 { font-size: 2.8rem; margin-bottom: 16px; }
-h2 { font-size: 2.2rem; margin-bottom: 16px; }
-p { font-size: 1.1rem; color: #4b5563; }
 /* --- ESTILOS DO INDICADOR DE SCROLL (ARRASTE PARA CIMA) --- */
-
 .indicador-scroll {
   position: absolute;
   bottom: 30px;
@@ -148,8 +103,6 @@ p { font-size: 1.1rem; color: #4b5563; }
   align-items: center;
   opacity: 0.8;
   animation: flutuar 2s infinite ease-in-out;
-  
-  /* Adicione estas duas linhas abaixo: */
   z-index: 4; 
   color: #ffffff; 
 }
@@ -161,7 +114,6 @@ p { font-size: 1.1rem; color: #4b5563; }
   margin-bottom: 8px;
 }
 
-/* Criamos a setinha desenhando as bordas de um quadrado vazio e girando-o em 45 graus */
 .seta-baixo {
   width: 12px;
   height: 12px;
@@ -170,7 +122,6 @@ p { font-size: 1.1rem; color: #4b5563; }
   transform: rotate(45deg);
 }
 
-/* O "motor" da animação que faz o elemento subir e descer 10 pixels */
 @keyframes flutuar {
   0%, 100% {
     transform: translateY(0);
@@ -179,19 +130,18 @@ p { font-size: 1.1rem; color: #4b5563; }
     transform: translateY(10px);
   }
 }
-/* --- LAYOUT PORTFÓLIO AUDIOVISUAL --- */
 
+/* --- LAYOUT PORTFÓLIO AUDIOVISUAL --- */
 .portfolio-audiovisual {
-  background-color: #0a0a0a; /* Fundo bem escuro como na referência */
+  background-color: #0a0a0a; 
   color: #ffffff;
-  align-items: flex-start; /* Alinha o conteúdo à esquerda */
+  align-items: flex-start; 
   text-align: left;
-  padding: 80px 5%; /* Dá respiro nas laterais */
-  min-height: auto; /* Permite que a seção cresça conforme o tamanho dos vídeos */
+  padding: 80px 5%; 
+  min-height: auto; 
   padding-bottom: 120px;
 }
 
-/* Cabeçalho da seção */
 .portfolio-header {
   margin-bottom: 40px;
   max-width: 800px;
@@ -218,31 +168,28 @@ p { font-size: 1.1rem; color: #4b5563; }
   font-size: 1.1rem;
 }
 
-/* Grelha de Vídeos */
 .grid-videos-verticais {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap; /* Permite que os vídeos caiam para a linha de baixo no celular */
+  flex-wrap: wrap; 
   justify-content: flex-start;
   width: 100%;
 }
 
-/* Cartões de Vídeo Vertical */
 .card-video {
   background-color: #141414;
   border-radius: 12px;
   overflow: hidden;
-  width: 280px; /* Largura fixa ideal para vídeos verticais */
+  width: 280px; 
   box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-  border-bottom: 4px solid #F27521; /* Linha laranja da Cutcel */
+  border-bottom: 4px solid #F27521; 
   transition: transform 0.3s ease;
 }
 
 .card-video:hover {
-  transform: translateY(-5px); /* Efeito de flutuar ao passar o mouse */
+  transform: translateY(-5px); 
 }
 
-/* Força o YouTube a ficar no formato Vertical (9:16) */
 .iframe-container {
   width: 100%;
   aspect-ratio: 9 / 16; 
@@ -255,7 +202,6 @@ p { font-size: 1.1rem; color: #4b5563; }
   border: none;
 }
 
-/* Área de texto debaixo do vídeo */
 .video-info {
   padding: 20px;
 }
@@ -281,3 +227,36 @@ p { font-size: 1.1rem; color: #4b5563; }
   color: #999999;
   line-height: 1.4;
 }
+
+/* --- OUTRAS SEÇÕES (CASO AINDA USE NO FINAL DA PÁGINA) --- */
+.grid-projetos {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  max-width: 900px;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  width: 280px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-bottom: 5px solid #F27521;
+  color: #111111;
+}
+
+.contato {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.contato p {
+  color: #9ca3af;
+}
+
+h1 { font-size: 2.8rem; margin-bottom: 16px; }
+h2 { font-size: 2.2rem; margin-bottom: 16px; }
+p { font-size: 1.1rem; color: #4b5563; }
