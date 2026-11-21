@@ -20,14 +20,14 @@ body {
   align-items: center;
   padding: 40px 20px;
   text-align: center;
-  position: relative; /* Mantém o aviso preso no fundo desta seção específica */
+  position: relative;
 }
 
 /* --- CONFIGURAÇÃO DA SEÇÃO HERO COM AMBIENT MODE --- */
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh; /* Força a seção a ter exatamente a altura da tela */
+  height: 100vh;
   overflow: hidden;
   background-color: #050505;
   display: flex;
@@ -94,6 +94,17 @@ body {
   color: #F27521; 
 }
 
+/* --- SEÇÃO SOBRE --- */
+.sobre {
+  background-color: #F27521;
+  color: #ffffff;
+}
+
+.sobre p {
+  color: #ffffff;
+  max-width: 800px;
+}
+
 /* --- ESTILOS DO INDICADOR DE SCROLL (ARRASTE PARA CIMA) --- */
 .indicador-scroll {
   position: absolute;
@@ -143,7 +154,7 @@ body {
 }
 
 .portfolio-header {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   max-width: 800px;
 }
 
@@ -168,39 +179,52 @@ body {
   font-size: 1.1rem;
 }
 
+/* --- BLOCOS DE CATEGORIA POR CLIENTE --- */
+.categoria-bloco {
+  width: 100%;
+  margin-bottom: 60px; /* Espaço entre um cliente e o próximo */
+}
+
+.categoria-titulo {
+  font-size: 1.6rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  padding-left: 14px;
+  border-left: 4px solid #F27521; /* Detalhe laranja CutCel ao lado do nome do cliente */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 /* Grelha de Vídeos em formato Carrossel Horizontal */
 .grid-videos-verticais {
   display: flex;
   gap: 20px;
-  flex-wrap: nowrap; /* Mantém todos os vídeos na mesma linha horizontal */
+  flex-wrap: nowrap;
   justify-content: flex-start;
   width: 100%;
-  overflow-x: auto; /* Ativa a rolagem horizontal */
-  padding-bottom: 24px; /* Espaço para a barra de rolagem */
-  scroll-behavior: smooth; /* Rolagem suave */
-  -webkit-overflow-scrolling: touch; /* Fluidez no telemóvel */
-  
-  /* Esconde a barra feia no Firefox */
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: thin; 
   scrollbar-color: #F27521 #141414; 
 }
 
-/* Estilização da barra de rolagem para navegadores Chrome/Safari/Edge */
 .grid-videos-verticais::-webkit-scrollbar {
-  height: 8px; /* Espessura da barra horizontal */
+  height: 8px;
 }
 .grid-videos-verticais::-webkit-scrollbar-track {
   background: #141414;
   border-radius: 10px;
 }
 .grid-videos-verticais::-webkit-scrollbar-thumb {
-  background-color: #F27521; /* Laranja CutCel */
+  background-color: #F27521;
   border-radius: 10px;
 }
 
 /* Cartões de Vídeo Vertical */
 .card-video {
-  flex: 0 0 auto; /* Impede que o cartão encolha quando há muitos vídeos na tela */
+  flex: 0 0 auto;
   background-color: #141414;
   border-radius: 12px;
   overflow: hidden;
@@ -252,26 +276,7 @@ body {
   line-height: 1.4;
 }
 
-/* --- OUTRAS SEÇÕES (CASO AINDA USE NO FINAL DA PÁGINA) --- */
-.grid-projetos {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 30px;
-  max-width: 900px;
-}
-
-.card {
-  background-color: #ffffff;
-  padding: 24px;
-  border-radius: 8px;
-  width: 280px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  border-bottom: 5px solid #F27521;
-  color: #111111;
-}
-
+/* --- SEÇÃO CONTATO --- */
 .contato {
   background-color: #000000;
   color: #ffffff;
