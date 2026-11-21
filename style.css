@@ -24,70 +24,167 @@ body {
 }
 
 /* --- CONFIGURAÇÃO DA SEÇÃO HERO COM AMBIENT MODE --- */
+html { scroll-behavior: smooth; }
+
+/* --- HERO MODERNO --- */
 .hero {
   position: relative;
   width: 100%;
   height: 100vh;
+  height: 100svh;
   overflow: hidden;
   background-color: #050505;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0;
 }
 
+/* Fundo desfocado (ambient) */
 .video-fundo-blur {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100vw; 
-  height: 100vh; 
-  transform: translate(-50%, -50%) scale(1.2); 
-  object-fit: cover; 
-  filter: blur(40px) opacity(0.5); 
-  z-index: 1;
-}
-
-.video-fundo-claro {
-  position: absolute;
-  top: 50%;
-  left: 50%;
   width: 100%;
   height: 100%;
-  transform: translate(-50%, -50%);
-  object-fit: contain; 
-  z-index: 2;
+  transform: translate(-50%, -50%) scale(1.3);
+  object-fit: cover;
+  filter: blur(60px) brightness(0.55);
+  z-index: 1;
 }
 
 .overlay-escuro {
   position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.15), rgba(0,0,0,0.75));
+  z-index: 2;
+}
+
+/* Menu superior */
+.hero-nav {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(4px);
-  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 5%;
+  z-index: 5;
+  color: #ffffff;
 }
 
-.hero-conteudo {
+.hero-logo {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 4px;
+}
+
+.hero-nav nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-left: 32px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.hero-nav nav a:hover {
+  opacity: 1;
+  color: #F27521;
+}
+
+/* Nome gigante atrás do vídeo */
+.hero-titulo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-size: clamp(5rem, 22vw, 20rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: #ffffff;
+  opacity: 0.95;
+  z-index: 3;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Cartão vertical com o reel */
+.hero-video-card {
   position: relative;
   z-index: 4;
+  height: min(68vh, 600px);
+  aspect-ratio: 9 / 16;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hero-video-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Barra inferior */
+.hero-rodape {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 5%;
+  z-index: 5;
   color: #ffffff;
-  text-align: center;
 }
 
-.hero-conteudo h1 {
-  font-size: 3.5rem;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
+.hero-rodape p {
+  font-size: 0.75rem;
   text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #cccccc;
+  max-width: none;
 }
 
-.hero-conteudo p {
-  font-size: 1.2rem;
-  color: #dddddd;
-  letter-spacing: 3px;
+.hero .indicador-scroll {
+  position: static;
+}
+
+.hero-botao {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 12px 26px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.hero-botao:hover {
+  background-color: #F27521;
+  border-color: #F27521;
+}
+
+/* Celular */
+@media (max-width: 768px) {
+  .hero-nav nav a { margin-left: 16px; font-size: 0.65rem; }
+  .hero-titulo { font-size: 26vw; }
+  .hero-video-card { height: 58svh; }
+  .hero-rodape { justify-content: center; }
+  .hero-rodape p,
+  .hero .indicador-scroll { display: none; }
 }
 
 .destaque-laranja {
