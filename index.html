@@ -10,28 +10,43 @@
 <body>
   
   <!-- Seção 1: Apresentação (Hero com Efeito Vidro/Blur) -->
-  <section class="secao hero">
+    <!-- Seção 1: Apresentação (Hero) -->
+  <section class="secao hero" id="inicio">
     <video autoplay loop muted playsinline class="video-fundo-blur">
       <source src="reel.mp4" type="video/mp4">
     </video>
-    
-    <video autoplay loop muted playsinline class="video-fundo-claro">
-      <source src="reel.mp4" type="video/mp4">
-    </video>
-    
     <div class="overlay-escuro"></div>
 
-    <div class="hero-conteudo" data-aos="fade-up" data-aos-duration="1000">
-      <h1>BEM-VINDO A <span class="destaque-laranja">CUTCEL</span></h1>
-      <p>GRAVAÇÃO / EDIÇÃO / FOTOGRAFIAS</p>
+    <!-- Menu superior -->
+    <header class="hero-nav">
+      <span class="hero-logo">CUTCEL<span class="destaque-laranja">.</span></span>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <!-- Nome gigante atrás do vídeo -->
+    <h1 class="hero-titulo" data-aos="fade-up" data-aos-duration="1200">CUTCEL</h1>
+
+    <!-- Reel em cartão vertical -->
+    <div class="hero-video-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+      <video autoplay loop muted playsinline>
+        <source src="reel.mp4" type="video/mp4">
+      </video>
     </div>
-    
-    <div class="indicador-scroll">
-      <span>Arraste para cima</span>
-      <div class="seta-baixo"></div>
+
+    <!-- Barra inferior -->
+    <div class="hero-rodape">
+      <p>Gravação / Edição / Fotografias</p>
+      <div class="indicador-scroll">
+        <span>Role para baixo</span>
+        <div class="seta-baixo"></div>
+      </div>
+      <a href="#portfolio" class="hero-botao">Ver trabalhos</a>
     </div>
   </section>
-
   <!-- Seção 2: Sobre -->
   <!-- Seção 2: Sobre -->
   <section class="secao sobre">
