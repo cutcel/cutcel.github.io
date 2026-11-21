@@ -95,14 +95,70 @@ body {
 }
 
 /* --- SEÇÃO SOBRE --- */
+/* --- SEÇÃO SOBRE --- */
 .sobre {
-  background-color: #F27521;
+  background-color: #000000;
   color: #ffffff;
+  padding: 40px 5% 100px; /* espaço embaixo para a seta "Arraste para cima" */
 }
 
-.sobre p {
+.sobre-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.sobre-texto {
+  flex: 1;
+  text-align: left;
+}
+
+.sobre-texto h2 {
   color: #ffffff;
-  max-width: 800px;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.sobre-video {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* Vídeo vertical que se ajusta à altura da tela (cabe em qualquer navegador) */
+.sobre .iframe-container {
+  height: min(65vh, 560px);
+  width: auto;
+  aspect-ratio: 9 / 16;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* --- CELULAR: texto em cima, vídeo centralizado embaixo --- */
+@media (max-width: 768px) {
+  .sobre-container {
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .sobre-texto {
+    flex: none;
+    text-align: center;
+  }
+
+  .sobre-texto h2 {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+  }
+
+  .sobre .iframe-container {
+    height: min(60svh, 520px);
+  }
 }
 
 /* --- ESTILOS DO INDICADOR DE SCROLL (ARRASTE PARA CIMA) --- */
